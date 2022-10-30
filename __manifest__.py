@@ -8,5 +8,8 @@
     'depends': [
         'sale',
     ],
+    'data': [
+        'data/group.xml',
+  ]
 
 }

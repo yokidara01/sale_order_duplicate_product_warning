@@ -7,7 +7,7 @@ class SaleOrder(models.Model):
 
     @api.onchange('order_line')
     def check_duplicated_products(self):
-        if self.env.user.has_group("sales_team.group_sale_salesman"):
+        if self.env.user.has_group("sale_order_duplicate_product_warning.group_manage_prices"):
             if len(self.order_line) != len(self.order_line.mapped('product_id')):
                 aux = set()
                 duplicated_products = []
